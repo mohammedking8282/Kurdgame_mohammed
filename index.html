@@ -1,60 +1,28 @@
-<html manifest="Cache.manifest">
+<!DOCTYPE html>
+<html>
 <head>
+<title>Kurdgame Host 9.00</title>
 <meta charset="utf-8">
-<title>Kurdgame Auto Exploit No-USB 9.00</title>
 <style>
-  html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    font-family: sans-serif;
-    color: #FFFFFF;
-    background-size: cover;
-    background-image: url('IMG_1478.png');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
-    text-align: center;
-  }
-  #title {
-    font-size: 26px;
-    font-weight: bold;
-    margin-top: 50px;
-    text-shadow: 2px 2px 5px black;
-  }
-  #progress {
-    font-size: 22px;
-    font-weight: bold;
-    margin-top: 30px;
-    text-shadow: 2px 2px 4px black;
-    color: #00FFCC;
-  }
-  #footer {
-    position: fixed;
-    bottom: 20px;
-    width: 100%;
-    font-size: 16px;
-    text-shadow: 2px 2px 4px black;
-  }
+body { background-color: #1a1a1a; color: white; font-family: sans-serif; text-align: center; margin-top: 20%; }
+h1 { font-size: 35px; color: #00ffd5; }
 </style>
 <script>
-  window.applicationCache.ondownloading = function(){ document.getElementById("progress").innerHTML = "جاري تحميل الهوست للتخزين المؤقت... (0%)"; };
-  window.applicationCache.onprogress = function(a){ document.getElementById("progress").innerHTML = "جاري الحفظ للتثبيت أوفلاين: " + Math.round((a.loaded/a.total)*100) + "%"; };
-  window.applicationCache.oncached = function(){ document.getElementById("progress").innerHTML = "تم التخزين بنجاح! أغلق المتصفح وأعد فتحه أوفلاين."; localStorage.cachedb = "yes"; };
-  window.applicationCache.onnoupdate = function(){ localStorage.cachedb = "yes"; };
-  window.applicationCache.onerror = function(){ localStorage.cachedb = "yes"; };
+window.onload = function() {
+    setTimeout(function() {
+        var script = document.createElement('script');
+        script.src = 'exploit.js';
+        document.body.appendChild(script);
+    }, 500);
+};
 </script>
+</head>
+<body>
+<h1>Kurdgame Host Auto-Exploit 9.00</h1>
+<p>جاري تحميل الثغرة، يرجى الانتظار...</p>
 <script src="int64.js"></script>
 <script src="rop.js"></script>
 <script src="kexploit.js"></script>
 <script src="webkit.js"></script>
-</head>
-<body>
-  <div id="title">Kurdgame Host Auto Exploit Version 9.00 (No-USB)</div>
-  <div id="progress">جاري معالجة الثغرة أوتوماتيكياً... انتظر ثواني</div>
-
-  <script src="goldhen.js"></script>
-
-  <div id="footer">Designed, Compiled by : Mohammed</div>
 </body>
 </html>
