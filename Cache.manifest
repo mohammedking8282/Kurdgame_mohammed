@@ -1,1 +1,13 @@
+CACHE MANIFEST
 
+CACHE:
+index.html
+style.css
+script.js
+favicon.ico
+
+NETWORK:
+*
+
+FALLBACK:
+/ /offline.html
