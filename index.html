@@ -1,65 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Kurdgame Host 9.00</title>
 <meta charset="utf-8">
+<title>Kurdgame Host 9.00</title>
 <style>
-body { 
-    background-color: #121212; 
-    color: white; 
-    font-family: sans-serif; 
-    text-align: center; 
-    margin-top: 10vh; 
-}
-h1 { 
-    font-size: 32px; 
-    color: #00ffd5; 
-    margin-bottom: 10px;
-}
-p {
-    color: #b0b0b0;
-    font-size: 18px;
-    margin-bottom: 40px;
-}
-.btn {
-    background-color: #00ffd5;
-    color: #121212;
-    border: none;
-    padding: 15px 40px;
-    font-size: 22px;
-    font-weight: bold;
-    border-radius: 8px;
-    cursor: pointer;
-    box-shadow: 0 4px 15px rgba(0, 255, 213, 0.4);
-    transition: 0.2s;
-}
-.btn:hover {
-    background-color: #00cca3;
-}
-#log {
-    margin-top: 30px;
-    font-size: 20px;
-    color: #ffcc00;
-}
+body { background-color: #111; color: #fff; font-family: sans-serif; text-align: center; margin-top: 15vh; }
+h1 { color: #00ffd5; font-size: 30px; }
+.btn { background: #00ffd5; color: #111; border: none; padding: 15px 35px; font-size: 20px; font-weight: bold; border-radius: 6px; cursor: pointer; margin-top: 20px; }
+#msgs { margin-top: 25px; font-size: 18px; color: #ffae00; }
 </style>
-<script>
-function runExploit() {
-    document.getElementById('log').innerHTML = "جاري حقن الثغرة، يرجى الانتظار...";
-    setTimeout(function() {
-        var s1 = document.createElement('script'); s1.src = 'int64.js'; document.body.appendChild(s1);
-        var s2 = document.createElement('script'); s2.src = 'rop.js'; document.body.appendChild(s2);
-        var s3 = document.createElement('script'); s3.src = 'kexploit.js'; document.body.appendChild(s3);
-        var s4 = document.createElement('script'); s4.src = 'webkit.js'; document.body.appendChild(s4);
-    }, 500);
-}
-</script>
+<script src="exploit.js"></script>
 </head>
-<body>
+<body id="load">
 <h1>Kurdgame Host 9.00</h1>
-<p>اضغط على الزر أدناه لتشغيل الثغرة يدوياً وتجنب التعليق</p>
-
-<button class="btn" onclick="runExploit()">تفعيل الثغرة (GoldHEN)</button>
-
-<div id="log"></div>
+<p>اضغط لتفعيل الثغرة على إصدار 9.00</p>
+<button class="btn" onclick="poc()">تفعيل الثغرة</button>
+<div id="msgs"></div>
+<script src="frontend.js"></script>
 </body>
 </html>
